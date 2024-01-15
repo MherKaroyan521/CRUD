@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <input id="regex" type="text">
+    <p>asdf</p>
+    <p>tun</p>
+    <p>shun</p>
+
+    <img src="./img/Mario.png" alt="Mario">
+
+    <!-- <form action="/submit" method="post"> -->
+        <input type="text" placeholder="Name" name="name" id="name">
+        <input type="password" placeholder="Password" name="password" id="password">
+        <input type="submit" id="submit">
+    <!-- </form> -->
+
+    <script>
+        function regex(event){
+            let p = document.getElementsByTagName("p");
+            let regex = new RegExp(`^${event.target.value}$`)
+            for(let i of p){
+                if(event.target.value == "") {
+                    i.style.display = "block";
+                }else if(regex.test(i.innerHTML) == true){
+                    i.style.display = "block";
+                }else{
+                    i.style.display = "none";
+                }
+            }
+        }
+
+        function blur(event){
+            let p = document.getElementsByTagName("p");
+            for(let i of p){
+                if(i.style.display == "block"){
+                    return;
+                }
+            }
+            for(let i of p){
+                i.style.display = "block";
+            }
+            event.target.value = "";
+        }
+        document.getElementById("regex").addEventListener("input", regex)
+        document.getElementById("regex").addEventListener("blur", blur);
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>
