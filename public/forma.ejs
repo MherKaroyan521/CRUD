@@ -8,66 +8,43 @@
     <title>Document</title>
 </head>
 <body>
-    <input id="regex" type="text">
-    <p>asdf</p>
-    <p>tun</p>
-    <p>shun</p>
 
-    <img src="./img/Mario.png" alt="Mario">
+    <table>
+        <h2>Update or Delete</h2>
 
-    <span><%= res %></span>
-
-    <ul>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Deleate</th>
+            <th>Update</th>
+        </tr>
         <% res.forEach(function(justOne) { %>
-            <li>
-            Id - <strong><%= justOne.theaterId %></strong> <br>
-            City - <strong><%= justOne.location.address.city %></strong> /
-            State - <strong><%= justOne.location.address.state %></strong> /
-            Zip code - <strong><%= justOne.location.address.zipcode %></strong> /
-            Street - <strong><%= justOne.location.address.street1 %></strong> <br> <br>
-            </li>
+            <tr>
+                <td><%= justOne._id %></td>
+                <td><%= justOne.firstname %></td>
+                <td><%= justOne.lastname %></td>
+                <td><a class="update" href="update/id=<%= justOne._id %>">Update</a></td>
+                <td><a class="delete" href="delete/id=<%= justOne._id %>">Delete</a></td>
+            </tr>
         <% }); %>
-    </ul>
+    </table>
+
 
 
 
     <!-- <form action="/submit" method="post"> -->
-        <input type="text" placeholder="Name" name="name" id="name">
+        <input type="text" placeholder="First Name" name="firstname" id="firstname">
+        <input type="text" placeholder="Last Name" name="lastname" id="lastname">
         <input type="email" placeholder="Email" name="email" id="email">
+        <input type="number" min="0" placeholder="Age" name="age" id="age">
         <input type="password" placeholder="Password" name="password" id="password">
         <input type="submit" id="submit">
     <!-- </form> -->
 
-    <script>
-        function regex(event){
-            let p = document.getElementsByTagName("p");
-            let regex = new RegExp(`^${event.target.value}$`)
-            for(let i of p){
-                if(event.target.value == "") {
-                    i.style.display = "block";
-                }else if(regex.test(i.innerHTML) == true){
-                    i.style.display = "block";
-                }else{
-                    i.style.display = "none";
-                }
-            }
-        }
-
-        function blur(event){
-            let p = document.getElementsByTagName("p");
-            for(let i of p){
-                if(i.style.display == "block"){
-                    return;
-                }
-            }
-            for(let i of p){
-                i.style.display = "block";
-            }
-            event.target.value = "";
-        }
-        document.getElementById("regex").addEventListener("input", regex)
-        document.getElementById("regex").addEventListener("blur", blur);
-    </script>
     <script src="./script.js"></script>
 </body>
 </html>
