@@ -16,19 +16,16 @@
             <th>Id</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Age</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Deleate</th>
             <th>Update</th>
+            <th>Delete</th>
         </tr>
         <% res.forEach(function(justOne) { %>
             <tr>
                 <td><%= justOne._id %></td>
                 <td><%= justOne.firstname %></td>
                 <td><%= justOne.lastname %></td>
-                <td><a class="update" href="update/id=<%= justOne._id %>">Update</a></td>
-                <td><a class="delete" href="delete/id=<%= justOne._id %>">Delete</a></td>
+                <td><a class="update" href="update/<%= justOne._id %>">Update</a></td>
+                <td><a class="delete" href="delete/<%= justOne._id %>">Delete</a></td>
             </tr>
         <% }); %>
     </table>
@@ -37,12 +34,14 @@
 
 
     <!-- <form action="/submit" method="post"> -->
+    <div class="form">
         <input type="text" placeholder="First Name" name="firstname" id="firstname">
         <input type="text" placeholder="Last Name" name="lastname" id="lastname">
         <input type="email" placeholder="Email" name="email" id="email">
         <input type="number" min="0" placeholder="Age" name="age" id="age">
         <input type="password" placeholder="Password" name="password" id="password">
         <input type="submit" id="submit">
+    </div>
     <!-- </form> -->
 
     <script src="./script.js"></script>

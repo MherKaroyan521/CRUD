@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form">
+        <input type="text" placeholder="First Name" name="firstname" id="firstname" value="<%= upd[0].firstname %>">
+        <input type="text" placeholder="Last Name" name="lastname" id="lastname" value="<%= upd[0].lastname %>">
+        <input type="email" placeholder="Email" name="email" id="email" value="<%= upd[0].email %>">
+        <input type="number" min="0" placeholder="Age" name="age" id="age" value="<%= upd[0].age %>">
+        <input type="password" placeholder="Password" name="password" id="password" value="<%= upd[0].password %>">
+        <input type="hidden" id="id" name="id" value="<%= upd[0]._id %>">
+        <input type="submit" id="update">
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
