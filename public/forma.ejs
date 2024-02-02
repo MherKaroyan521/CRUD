@@ -8,39 +8,40 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="admin">
+        <table>
+            <h2>Update or Delete</h2>
 
-    <table>
-        <h2>Update or Delete</h2>
-
-        <tr>
-            <th>Id</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Update</th>
-            <th>Delete</th>
-        </tr>
-        <% res.forEach(function(justOne) { %>
             <tr>
-                <td><%= justOne._id %></td>
-                <td><%= justOne.firstname %></td>
-                <td><%= justOne.lastname %></td>
-                <td><a class="update" href="update/<%= justOne._id %>">Update</a></td>
-                <td><a class="delete" href="delete/<%= justOne._id %>">Delete</a></td>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
-        <% }); %>
-    </table>
+            <% res.forEach(function(justOne) { %>
+                <tr>
+                    <td><%= justOne._id %></td>
+                    <td><%= justOne.firstname %></td>
+                    <td><%= justOne.lastname %></td>
+                    <td><a class="update" href="update/<%= justOne._id %>">Update</a></td>
+                    <td><a class="delete" href="delete/<%= justOne._id %>">Delete</a></td>
+                </tr>
+            <% }); %>
+        </table>
 
 
 
 
-    <!-- <form action="/submit" method="post"> -->
-    <div class="form">
-        <input type="text" placeholder="First Name" name="firstname" id="firstname">
-        <input type="text" placeholder="Last Name" name="lastname" id="lastname">
-        <input type="email" placeholder="Email" name="email" id="email">
-        <input type="number" min="0" placeholder="Age" name="age" id="age">
-        <input type="password" placeholder="Password" name="password" id="password">
-        <input type="submit" id="submit">
+        <!-- <form action="/submit" method="post"> -->
+        <div class="form">
+            <input type="text" placeholder="First Name" name="firstname" id="firstname">
+            <input type="text" placeholder="Last Name" name="lastname" id="lastname">
+            <input type="email" placeholder="Email" name="email" id="email">
+            <input type="number" min="0" placeholder="Age" name="age" id="age">
+            <input type="password" placeholder="Password" name="password" id="password">
+            <input type="submit" id="submit">
+        </div>
     </div>
     <!-- </form> -->
 

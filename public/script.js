@@ -28,7 +28,7 @@ function updateValue(){
     let ageinput = document.getElementById("age").value;
     let emailinput = document.getElementById("email").value;
 
-    fetch('/update', {
+    fetch('/updateData', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
